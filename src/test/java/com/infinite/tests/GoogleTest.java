@@ -2,8 +2,10 @@ package com.infinite.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
+import com.infinite.main.jupiter.WebTest;
 import org.junit.jupiter.api.Test;
 
+@WebTest
 public class GoogleTest {
 
     @Test

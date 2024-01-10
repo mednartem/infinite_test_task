@@ -18,7 +18,7 @@ The automation tests in this repository are written in Java and utilize various 
 
 To run the tests, use the following command:
 ```bash
-gradle clean test
+./gradlew clean test
 ```
 
 ### Remote Execution

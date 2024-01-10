@@ -1,21 +1,37 @@
 package com.infinite.tests;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import com.infinite.main.config.ProjectConfig;
 import com.infinite.main.jupiter.WebTest;
+import com.infinite.main.pages.BasePage;
+import com.infinite.main.pages.SearchPage;
 import org.junit.jupiter.api.Test;
 
 @WebTest
 public class GoogleTest {
+
+    private final BasePage basePage = new BasePage();
+    private final SearchPage searchPage = new SearchPage();
 
     @Test
     void checkResultPage() {
         String searchText = "infinite com";
         String expectedLink = "https://www.infinite.com/";
 
-        Selenide.open(ProjectConfig.app.baseUrl());
-        Selenide.$("[name=q]").setValue(searchText).submit();
-        Selenide.$$("#rso a").first().shouldHave(Condition.attribute("href", expectedLink));
+        basePage
+                .open(ProjectConfig.app.baseUrl());
+        searchPage
+                .enterValueToTheSearchBarAndPressEnter(searchText)
+                .firstLinkShouldBe(expectedLink);
+    }
+
+    @Test
+    void failedTest() {
+        String searchText = "infinite com";
+
+        basePage
+                .open(ProjectConfig.app.baseUrl());
+        searchPage
+                .enterValueToTheSearchBarAndPressEnter(searchText)
+                .firstLinkShouldBe(searchText);
     }
 }

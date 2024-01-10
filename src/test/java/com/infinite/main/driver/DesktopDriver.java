@@ -1,7 +1,9 @@
 package com.infinite.main.driver;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.infinite.main.config.ProjectConfig;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -12,6 +14,7 @@ public class DesktopDriver {
         Configuration.browser = ProjectConfig.browser.name();
         Configuration.browserSize = ProjectConfig.browser.browserSize();
         Configuration.baseUrl = ProjectConfig.app.baseUrl();
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.browserCapabilities = getChromeCapabilities();
     }
 

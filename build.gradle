@@ -25,21 +25,22 @@ allure {
 }
 
 dependencies {
-    testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
+    testImplementation ("org.junit.jupiter:junit-jupiter:${junitVersion}")
     // WEB
-    testImplementation "com.codeborne:selenide:${selenideVersion}"
+    testImplementation ("com.codeborne:selenide:${selenideVersion}")
     //Config
-    testImplementation "org.aeonbits.owner:owner:1.0.12"
+    testImplementation ("org.aeonbits.owner:owner:1.0.12")
     // Allure
-    testImplementation "io.qameta.allure:allure-attachments:${allureVersion}"
-    testImplementation("io.qameta.allure:allure-junit5:${allureVersion}") {
+    testImplementation ("io.qameta.allure:allure-attachments:${allureVersion}")
+    testImplementation ("io.qameta.allure:allure-junit5:${allureVersion}") {
         exclude group: "org.junit.jupiter-api"
         exclude group: "org.junit.platform"
         exclude group: "org.junit.jupiter"
     }
-    testImplementation("io.qameta.allure:allure-selenide:${allureVersion}") {
+    testImplementation ("io.qameta.allure:allure-selenide:${allureVersion}") {
         exclude group: 'com.codeborne'
     }
+    testRuntimeOnly ('ch.qos.logback:logback-classic:1.4.12')
 }
 
 tasks.withType(JavaCompile) {

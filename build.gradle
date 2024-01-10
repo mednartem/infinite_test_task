@@ -1,0 +1,29 @@
+plugins {
+    id "java"
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = "com.infinite"
+version = "1.0"
+
+ext {
+    selenideVersion = "6.19.1"
+    junitVersion = "5.10.0"
+}
+
+dependencies {
+    testImplementation (
+            "com.codeborne:selenide:${selenideVersion}",
+            "org.junit.jupiter:junit-jupiter:${junitVersion}",
+    )
+    testRuntimeOnly(
+            'ch.qos.logback:logback-classic:1.4.12'
+    )
+}
+
+test {
+    useJUnitPlatform()
+}

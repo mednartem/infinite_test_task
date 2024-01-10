@@ -1,6 +1,6 @@
 # Test Framework
 
-This repository contains test automation framework for local run in parallel tests used for making test task for **infinite company**.
+This repository contains test automation framework for local run in parallel tests used for making test task for [**Infinite company**](https://www.infinite.com/).
 
 ## Overview
 

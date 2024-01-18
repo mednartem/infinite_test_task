@@ -1,8 +1,8 @@
 package com.infinite.tests;
 
 import com.infinite.main.dictionary.Engine;
-import com.infinite.main.jupiter.SearchEngine;
-import com.infinite.main.jupiter.WebTest;
+import com.infinite.main.jupiter.annotation.SearchEngine;
+import com.infinite.main.jupiter.annotation.WebTest;
 import com.infinite.main.pages.BasePage;
 import com.infinite.main.pages.ResultPage;
 import com.infinite.main.pages.SearchPage;

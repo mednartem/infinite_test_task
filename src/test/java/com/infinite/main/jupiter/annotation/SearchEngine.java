@@ -1,6 +1,7 @@
-package com.infinite.main.jupiter;
+package com.infinite.main.jupiter.annotation;
 
 import com.infinite.main.dictionary.Engine;
+import com.infinite.main.jupiter.extension.EngineExtension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.annotation.ElementType;

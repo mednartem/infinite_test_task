@@ -1,4 +1,4 @@
-package com.infinite.main.jupiter;
+package com.infinite.main.jupiter.extension;
 
 import com.codeborne.selenide.WebDriverRunner;
 import com.infinite.main.attachments.AttachmentHelpers;

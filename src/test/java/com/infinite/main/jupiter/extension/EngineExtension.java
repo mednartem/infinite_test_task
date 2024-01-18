@@ -1,6 +1,7 @@
-package com.infinite.main.jupiter;
+package com.infinite.main.jupiter.extension;
 
 import com.infinite.main.dictionary.Engine;
+import com.infinite.main.jupiter.annotation.SearchEngine;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;

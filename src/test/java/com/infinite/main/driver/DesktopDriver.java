@@ -10,10 +10,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class DesktopDriver {
 
     public static void configure() {
-        Configuration.baseUrl = ProjectConfig.app.baseUrl();
         Configuration.browser = ProjectConfig.browser.name();
         Configuration.browserSize = ProjectConfig.browser.browserSize();
-        Configuration.baseUrl = ProjectConfig.app.baseUrl();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.browserCapabilities = getChromeCapabilities();
     }

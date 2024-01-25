@@ -7,6 +7,9 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SearchPage {
+    private void enterValueToSearchBarAndPressEnter(SelenideElement element, String text) {
+        element.setValue(text).pressEnter();
+    }
 
     @Step("I input `{text}` into the search bar and hit Enter using the `{engine}`")
     public SearchPage enterValueToSearchBarAndPressEnter(Engine engine, String text) {
@@ -17,9 +20,5 @@ public class SearchPage {
             default -> throw new IllegalStateException("Unexpected value: " + engine);
         }
         return this;
-    }
-
-    private void enterValueToSearchBarAndPressEnter(SelenideElement element, String text) {
-        element.setValue(text).pressEnter();
     }
 }

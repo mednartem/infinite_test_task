@@ -2,6 +2,7 @@ package com.infinite.main.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.infinite.main.dictionary.Engine;
+import com.infinite.main.exception.IncorrectEngine;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -17,7 +18,7 @@ public class SearchPage {
             case GOOGLE -> enterValueToSearchBarAndPressEnter($("[name=q]"), text);
             case YAHOO -> enterValueToSearchBarAndPressEnter($("[name=p]"), text);
             case YANDEX -> enterValueToSearchBarAndPressEnter($("[name=text]"), text);
-            default -> throw new IllegalStateException("Unexpected value: " + engine);
+            default -> throw new IncorrectEngine("Unexpected engine: " + engine);
         }
         return this;
     }
